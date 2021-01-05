@@ -1,3 +1,4 @@
+/* 初始化样式 */
 * {
   margin: 0;
   padding: 0;
@@ -9,16 +10,17 @@ body {
   overflow: hidden;
 }
 
+/* 页面的背景图 */
 body {
   background: url("/assets/images/login_bg.jpg") no-repeat center;
   background-size: cover;
 }
-
+/* logo的设置 */
 .logo {
-  /* background: url("/assets/images/logo.png") no-repeat; */
   margin-top: 20px;
 }
 
+/* 登录注册的盒子 */
 .box {
   width: 400px;
   height: 310px;
@@ -28,29 +30,36 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+/* 盒子的标题 */
 .title {
   height: 60px;
   background: url("/assets/images/login_title.png") no-repeat center;
 }
-
+/* 设置右浮动 */
 .fr {
   float: right;
 }
-
+/* 整个盒子设置左右内边距 */
 .layui-form {
   padding: 0 30px;
 }
 
 .layui-input {
-  position: relative;
-}
-.layui-icon {
-  position: absolute;
+  /* position: relative; */
+  padding-left: 30px;
 }
 
+.layui-icon {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 6px;
+}
+
+/* 初始化登录显示 */
 .login {
   display: block;
 }
+/* 初始化注册隐藏 */
 .regist {
   display: none;
 }

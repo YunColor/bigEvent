@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/css/login.css" />
     <link rel="stylesheet" href="/assets/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="/assets/css/login.css" />
     <title>登录页</title>
   </head>
   <body>
@@ -19,8 +19,8 @@
       <!-- 登录 -->
       <div class="login">
         <form class="layui-form" action="">
+          <i class="layui-icon layui-icon-username"></i>
           <div class="layui-form-item">
-            <i class="layui-icon layui-icon-username"></i>
             <input
               type="text"
               name="username"
@@ -31,8 +31,8 @@
               class="layui-input"
             />
           </div>
+          <i class="layui-icon layui-icon-password"></i>
           <div class="layui-form-item">
-            <i class="layui-icon layui-icon-password"></i>
             <input
               type="password"
               name="password"
@@ -105,6 +105,7 @@
     </div>
 
     <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/js/ajaxBase.js"></script>
     <script src="/assets/lib/layui/layui.all.js"></script>
     <script src="/assets/js/login.js"></script>
   </body>

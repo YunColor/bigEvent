@@ -25,9 +25,8 @@ $(function(){
           ,'密码必须6到12位，且不能出现空格'
         ],
 
-
         //注册的再次验证
-        repass:function(value,item){
+        repass:(value,item)=>{
             //当前的value就是二次密码的值
             //拿到再次输入的比较密码元素
           let prepass=  $(".regist [name=password]").val()
@@ -39,9 +38,6 @@ $(function(){
         }
       });  
             
-
-
-
     // ===实现验证注册====
 
     //定义layer
@@ -51,13 +47,17 @@ $(function(){
         //阻止跳转
         e.preventDefault();
 
-        //提取收集到的表单数据
+        //清除上一次的数据
+        // $(".regist .layui-form").empty()
+
+        //提取收集到的表单数据--serialize仅仅只是收集到文字信息--收集不到文件相关的信息
         let data=$(this).serialize()
 
+        
         //发送ajax数据
         $.ajax({
             type:"POST",
-            url:"http://ajax.frontend.itheima.net/api/reguser",
+            url:"/api/reguser",
             //名字一样 可简写
             data,
             success(res){
@@ -66,10 +66,15 @@ $(function(){
                 }
             }
         })
-        setTimeout(function(){
-            $(".login").show()
-            $(".regist").hide()
-        },3000)
+        $('#gotoLogin').click()
+
+        //设置延时跳转到登录界面
+        
+            // $(".login").show()
+            // $(".regist").hide()
+            // 清除注册好了的数据资料
+            $("[autocomplete=off]").val("")
+  
     })
 
 
@@ -81,11 +86,13 @@ $(function(){
         e.preventDefault()
         //接受表单的数据
         let data=$(this).serialize()
+
         $.ajax({
             type:"POST",
-            url:"http://ajax.frontend.itheima.net/api/login",
+            url:"/api/login",
             data,
             success(res){
+                console.log(1212);
                 // console.log(res);
                 if(res.status!==0){
                     layer.msg(res.message)
