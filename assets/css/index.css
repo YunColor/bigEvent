@@ -1,0 +1,40 @@
+/* 用户头像 */
+.layui-nav-img {
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+/* 文字头像 */
+.text-avatar {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #009688;
+  margin-right: 8px;
+  text-align: center;
+  line-height: 40px;
+}
+/* 左边栏的头像 */
+.userInfo {
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+/* 底部文字居中 */
+.layui-footer {
+  text-align: center;
+}
+/* incofont处理 */
+.iconfont {
+  margin-right: 8px;
+}
+/* layui-icon的处理 */
+.layui-icon {
+  margin-left: 30px;
+}
+/* layui-body */
+.layui-body {
+  overflow: hidden;
+}
