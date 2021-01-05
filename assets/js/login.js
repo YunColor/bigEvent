@@ -95,8 +95,9 @@ $(function(){
                 console.log(1212);
                 // console.log(res);
                 if(res.status!==0){
-                    layer.msg(res.message)
+                   return layer.msg(res.message)
                 }
+                //存储登录用户的token
         localStorage.setItem("token", res.token);
                 layer.msg(res.message,function(){
                     location.href="/home/index.html"
