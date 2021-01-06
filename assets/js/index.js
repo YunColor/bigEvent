@@ -1,14 +1,15 @@
 // 发送ajax获取用户登录的名字
+let layer = layui.layer;
 getUserInfo()
 function getUserInfo(){
     $.ajax({
         url:"/my/userinfo",
-        headers:{
-            //设置头部---带上登录的token--存储到浏览器的local中
-        Authorization: localStorage.getItem("token"),
-        },
+        // headers:{
+        //     //设置头部---带上登录的token--存储到浏览器的local中
+        // Authorization: localStorage.getItem("token"),
+        // },
         success(res){
-            console.log(res);
+            // console.log(res);
             //拿到用户的基本信息
             renderUserInfo(res.data)
         }
@@ -26,7 +27,7 @@ function renderUserInfo(data){
     //把名字的第一个字转大写
     let first=name[0].toUpperCase()
     //获取到的名字以及他的首字母
-    console.log(name,first);
+    // console.log(name,first);
 
     //动态欢迎用户
     $("#welcome").text("欢迎--"+name)
@@ -40,3 +41,16 @@ function renderUserInfo(data){
         $(".text-avatar").text(first).show()
     }
 }
+
+//实现退出功能
+$("#loginoutBtn").click(function(){
+    layer.confirm('确定退出吗?', {icon: 3, title:'提示'}, function(index){
+        //do something
+
+        //清除本地存储
+        localStorage.removeItem("token");
+        //跳转到主页
+        location.href="/home/login.html"
+        layer.close(index);
+      });      
+})

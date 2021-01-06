@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 15px;
+}
+.layui-card-body {
+  width: 500px;
+}
+iframe {
+  background-color: #ccc;
+}
